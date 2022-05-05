@@ -15,6 +15,6 @@ module.exports = {
 		indent: 'off',
 		'linebreak-style': 'off',
 		'no-plusplus': 'off',
-		'import/extensions': 'always',
+		'import/extensions': 'off',
 	},
 };

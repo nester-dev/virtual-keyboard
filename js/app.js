@@ -1,5 +1,6 @@
 import english from './layouts/en.js';
 import createKeys from './functions/create.js';
+import keyPress from './functions/key-press.js';
 
 const Keyboard = {
 	elements: {
@@ -26,6 +27,14 @@ const Keyboard = {
 		createKeys(this.elements.keyboard, english);
 		this.elements.container.appendChild(this.elements.keyboard);
 		document.body.appendChild(this.elements.container);
+
+		document.querySelectorAll('.keyboard__key').forEach((value) => {
+			if (!value.getAttribute('data-special')) {
+				this.properties.keys.push(value);
+			}
+		});
+
+		keyPress(this.elements.textarea, this.properties.keys, Keyboard.properties.capslock);
 	},
 
 };

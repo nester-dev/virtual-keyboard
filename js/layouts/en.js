@@ -219,7 +219,7 @@ const english = [
 			code: 'Enter',
 			value: 'Enter',
 			shift: null,
-			soecial: true,
+			special: true,
 		},
 	],
 	// ================================

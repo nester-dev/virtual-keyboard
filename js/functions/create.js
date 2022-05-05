@@ -9,6 +9,7 @@ export default function createKeys(parent, lang) {
 			key.innerHTML = lang[i][j].value;
 			key.setAttribute('data-code', `${lang[i][j].code}`);
 			key.setAttribute('data-value', `${lang[i][j].value}`);
+			key.setAttribute('data-shift', `${lang[i][j].shift}`);
 			if (lang[i][j].special) {
 				key.setAttribute('data-special', `${lang[i][j].special}`);
 			}
