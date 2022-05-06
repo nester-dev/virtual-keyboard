@@ -11,4 +11,5 @@ export default function caretPosition(textarea, value) {
 	}
 	input.selectionStart = start + value.length;
 	input.selectionEnd = start + value.length;
+	input.focus();
 }

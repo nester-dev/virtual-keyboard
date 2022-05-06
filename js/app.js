@@ -1,6 +1,6 @@
 import english from './layouts/en.js';
 import createKeys from './functions/create.js';
-import keyPress from './functions/key-press.js';
+import eventHandler from './functions/eventHandler.js';
 
 const Keyboard = {
 	elements: {
@@ -34,7 +34,8 @@ const Keyboard = {
 			}
 		});
 
-		keyPress(this.elements.textarea, this.properties.keys, Keyboard.properties.capslock);
+		eventHandler('keydown', 'keyup', this.elements.textarea, this.properties.keys, this.elements.keyboard);
+		eventHandler('mousedown', 'mouseup', this.elements.textarea, this.properties.keys, this.elements.keyboard);
 	},
 
 };
