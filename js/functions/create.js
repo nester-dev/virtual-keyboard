@@ -17,93 +17,75 @@ export default function createKeys(parent, lang) {
 			switch (lang[i][j].code) {
 				case 'Backspace':
 					key.classList.add('keyboard__key--wide');
-
 					break;
 
 				case 'Tab':
 					key.classList.add('keyboard__key--medium');
-
 					break;
 
 				case 'Delete':
 					key.classList.add('keyboard__key--medium');
-
 					break;
 
 				case 'CapsLock':
 					key.classList.add('keyboard__key--wide', 'keyboard__key--activatable');
-
 					break;
 
 				case 'Enter':
 					key.classList.add('keyboard__key--wide');
-
 					break;
 
 				case 'ShiftLeft':
 					key.classList.add('keyboard__key--wide');
-
 					break;
 
 				case 'ShiftRight':
 					key.classList.add('keyboard__key--wide');
-
 					break;
 
 				case 'ControlLeft':
 					key.classList.add('keyboard__key--medium');
-
 					break;
 
 				case 'MetaLeft':
 					key.classList.add('keyboard__key--medium');
-
 					break;
 
 				case 'AltLeft':
 					key.classList.add('keyboard__key--medium');
-
 					break;
 
 				case 'Space':
 					key.classList.add('keyboard__key--extra-wide');
-
 					break;
 
 				case 'AltRight':
 					key.classList.add('keyboard__key--medium');
-
 					break;
 
 				case 'ArrowLeft':
 					key.classList.add('keyboard__key--dark');
-
 					break;
 
 				case 'ArrowRight':
 					key.classList.add('keyboard__key--dark');
-
 					break;
 
 				case 'ArrowDown':
 					key.classList.add('keyboard__key--dark');
-
 					break;
 
 				case 'ArrowUp':
 					key.classList.add('keyboard__key--dark');
-
 					break;
 
 				case 'ControlRight':
 					key.classList.add('keyboard__key--medium');
-
 					break;
 
 				default:
 					break;
 			}
-
 			row.appendChild(key);
 		}
 		parent.appendChild(row);
