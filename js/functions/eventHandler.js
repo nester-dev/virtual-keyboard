@@ -45,10 +45,13 @@ export default function eventHandler(event1, event2, textarea, keys, keyboard) {
 			caretPosition(input, ' ');
 		} else if (key && key.getAttribute('data-code') === 'Backspace') {
 			key.classList.add('keyboard__key--pressed');
-			caretPosition(input, '');
+			caretPosition(input, '', 'Backspace');
 		} else if (key && key.getAttribute('data-code') === 'Enter') {
 			key.classList.add('keyboard__key--pressed');
 			caretPosition(input, '\n');
+		} else if (key && key.getAttribute('data-code') === 'Delete') {
+			key.classList.add('keyboard__key--pressed');
+			caretPosition(input, '', 'Delete');
 		} else if (key && key.getAttribute('data-code') === 'Tab') {
 			key.classList.add('keyboard__key--pressed');
 			caretPosition(input, '    ');
