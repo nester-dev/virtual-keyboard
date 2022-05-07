@@ -6,9 +6,11 @@ export default function changeLang(currLang, arr, english, russian) {
 		if (event.altKey && event.shiftKey) {
 			if (language === 'en') {
 				language = 'ru';
+				localStorage.setItem('lang', JSON.stringify(language));
 				changedLang = russian;
 			} else if (language === 'ru') {
 				language = 'en';
+				localStorage.setItem('lang', JSON.stringify(language));
 				changedLang = english;
 			}
 
