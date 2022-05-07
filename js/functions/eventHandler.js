@@ -2,7 +2,7 @@ import toogleCapsLock from './toogleCaps.js';
 import caretPosition from './caretPosition.js';
 
 export default function eventHandler(event1, event2, textarea, keys, keyboard) {
-	const defaultKeys = ['Backspace', 'Delete', 'Alt', 'ControlLeft', 'MetaLeft', 'AltLeft', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+	const defaultKeys = ['ControlLeft', 'MetaLeft', 'AltLeft', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
 	const input = textarea;
 	const mouseEvent = ['mousedown', 'mouseup'];
 	const keyboardEvent = ['keydown', 'keyup'];
@@ -56,6 +56,7 @@ export default function eventHandler(event1, event2, textarea, keys, keyboard) {
 			key.classList.add('keyboard__key--pressed');
 			caretPosition(input, '    ');
 		} else if (key && defaultKeys.includes(key.getAttribute('data-code'))) {
+			event.preventDefault();
 			key.classList.add('keyboard__key--pressed');
 		} else if (key) {
 			key.classList.add('keyboard__key--pressed');

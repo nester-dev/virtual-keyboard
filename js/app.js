@@ -1,6 +1,8 @@
 import english from './layouts/en.js';
+import russian from './layouts/ru.js';
 import createKeys from './functions/create.js';
 import eventHandler from './functions/eventHandler.js';
+import changeLang from './functions/changeLang.js';
 
 const Keyboard = {
 	elements: {
@@ -12,6 +14,7 @@ const Keyboard = {
 	properties: {
 		capslock: null,
 		keys: [],
+		currLang: 'en',
 	},
 
 	init() {
@@ -36,6 +39,7 @@ const Keyboard = {
 
 		eventHandler('keydown', 'keyup', this.elements.textarea, this.properties.keys, this.elements.keyboard);
 		eventHandler('mousedown', 'mouseup', this.elements.textarea, this.properties.keys, this.elements.keyboard);
+		changeLang(this.properties.currLang, this.properties.keys, english, russian);
 	},
 
 };
