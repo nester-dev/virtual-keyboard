@@ -3,7 +3,7 @@ export default function caretPosition(textarea, value, specialKey) {
 	const start = input.selectionStart;
 	const end = input.selectionEnd;
 	if (specialKey && specialKey === 'Backspace') {
-		if (start === end) {
+		if (start === end && (start && end) !== 0) {
 			input.value = input.value.substr(0, start - 1) + input.value.substr(start);
 			input.selectionStart = start - 1;
 			input.selectionEnd = start - 1;
