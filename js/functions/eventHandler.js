@@ -2,7 +2,7 @@ import toogleCapsLock from './toogleCaps.js';
 import caretPosition from './caretPosition.js';
 
 export default function eventHandler(event1, event2, textarea, keys, keyboard) {
-	const defaultKeys = ['ControlLeft', 'MetaLeft', 'AltLeft', 'AltRight', 'ControlRight', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+	const defaultKeys = ['ControlLeft', 'MetaLeft', 'AltLeft', 'AltRight', 'ControlRight'];
 	const input = textarea;
 	const mouseEvent = ['mousedown', 'mouseup'];
 	const keyboardEvent = ['keydown', 'keyup'];
@@ -55,6 +55,18 @@ export default function eventHandler(event1, event2, textarea, keys, keyboard) {
 		} else if (key && key.getAttribute('data-code') === 'Tab') {
 			key.classList.add('keyboard__key--pressed');
 			caretPosition(input, '    ');
+		} else if (key && key.getAttribute('data-code') === 'ArrowLeft') {
+			key.classList.add('keyboard__key--pressed');
+			caretPosition(input, '', 'ArrowLeft');
+		} else if (key && key.getAttribute('data-code') === 'ArrowRight') {
+			key.classList.add('keyboard__key--pressed');
+			caretPosition(input, '', 'ArrowRight');
+		} else if (key && key.getAttribute('data-code') === 'ArrowUp') {
+			key.classList.add('keyboard__key--pressed');
+			caretPosition(input, '', 'ArrowUp');
+		} else if (key && key.getAttribute('data-code') === 'ArrowDown') {
+			key.classList.add('keyboard__key--pressed');
+			caretPosition(input, '', 'ArrowDown');
 		} else if (key && defaultKeys.includes(key.getAttribute('data-code'))) {
 			event.preventDefault();
 			key.classList.add('keyboard__key--pressed');
